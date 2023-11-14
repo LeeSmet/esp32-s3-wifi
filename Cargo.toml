@@ -16,3 +16,4 @@ smoltcp = { version = "0.10.0", default-features=false, features = ["proto-igmp"
 embedded-svc = { version = "0.25.0", default-features = false, features = [] }
 embedded-io = "0.4.0"
 heapless = { version = "0.7.14", default-features = false }
+toml-cfg = "0.1.3"
