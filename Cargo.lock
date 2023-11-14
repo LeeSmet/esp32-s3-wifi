@@ -211,20 +211,6 @@ checksum = "edd0f118536f44f5ccd48bcb8b111bdc3de888b58c74639dfb034a357d0f206d"
 
 [[package]]
 name = "embedded-svc"
-version = "0.25.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "adb928fd4f8e71dee7628bbab86b25df74c503fc5209cfeeb174a9806bb4fd11"
-dependencies = [
- "atomic-waker",
- "embedded-io 0.4.0",
- "enumset",
- "heapless",
- "no-std-net",
- "serde",
-]
-
-[[package]]
-name = "embedded-svc"
 version = "0.26.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "55feac55fb81e14c747d5475f05ead553855a133a36f979fa4e7883a240ee829"
@@ -389,7 +375,7 @@ dependencies = [
  "cfg-if",
  "critical-section",
  "embedded-io 0.4.0",
- "embedded-svc 0.26.4",
+ "embedded-svc",
  "enumset",
  "esp-wifi-sys",
  "esp32-hal",
@@ -442,7 +428,7 @@ name = "esp32-s3-wifi"
 version = "0.1.0"
 dependencies = [
  "embedded-io 0.4.0",
- "embedded-svc 0.25.3",
+ "embedded-svc",
  "esp-alloc",
  "esp-backtrace",
  "esp-println",
