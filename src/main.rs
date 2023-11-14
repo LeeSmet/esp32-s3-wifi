@@ -10,6 +10,16 @@ use hal::{clock::ClockControl, peripherals::Peripherals, prelude::*, Delay};
 use esp_wifi::{initialize, EspWifiInitFor};
 
 use hal::{timer::TimerGroup, Rng};
+
+/// Configuration file embedded in the binary.
+#[toml_cfg::toml_config]
+pub struct Config {
+    #[default("")]
+    wifi_ssid: &'static str,
+    #[default("")]
+    wifi_psk: &'static str,
+}
+
 #[global_allocator]
 static ALLOCATOR: esp_alloc::EspHeap = esp_alloc::EspHeap::empty();
 
@@ -46,6 +56,9 @@ fn main() -> ! {
         &clocks,
     )
     .unwrap();
+
+    log::info!("wifi ssid: {}", CONFIG.wifi_ssid);
+
     loop {
         println!("Loop...");
         delay.delay_ms(500u32);
