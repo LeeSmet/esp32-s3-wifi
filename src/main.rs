@@ -107,7 +107,8 @@ fn main() -> ! {
                 }
             }
             Err(err) => {
-                log::info!("{:?}", err);
+                log::error!("{:?}", err);
+                #[allow(clippy::empty_loop)]
                 loop {}
             }
         }
